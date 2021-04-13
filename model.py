@@ -76,8 +76,8 @@ def build_landmark_model(input_shape, output_size):
 
     # Dense layers.
     #dense_1 = keras.layers.Dense(units=1024,
-                                 activation='relu',
-                                 use_bias=True)
+                                 #activation='relu',
+                                 #use_bias=True)
     dense_1 = keras.layers.Dense(GraphConvolution(input_dim=self.input_dim,
                                             output_dim=FLAGS.hidden1,
                                             placeholders=self.placeholders,
