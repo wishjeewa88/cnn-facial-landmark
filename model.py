@@ -90,7 +90,7 @@ def build_landmark_model(input_shape, output_size):
                                  use_bias=True)
     
     class GraphConvolution(Layer):
-    """Graph convolution layer."""
+   # """Graph convolution layer."""
     def __init__(self, input_dim, output_dim, placeholders, dropout=0.,
                  sparse_inputs=False, act=tf.nn.relu, bias=False,
                  featureless=False, **kwargs):
