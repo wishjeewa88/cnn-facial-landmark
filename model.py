@@ -82,6 +82,14 @@ def build_landmark_model(input_shape, output_size):
                                  activation=None,
                                  use_bias=True)
     
+    self.layers.append(GraphConvolution(input_dim=self.input_dim,
+                                            output_dim=FLAGS.hidden1,
+                                            placeholders=self.placeholders,
+                                            act=tf.nn.relu,
+                                            dropout=True,
+                                            sparse_inputs=True,
+                                            logging=self.logging))
+    
     # Batch norm layers
     bn_1 = keras.layers.BatchNormalization()
     bn_2 = keras.layers.BatchNormalization()
