@@ -78,14 +78,9 @@ def build_landmark_model(input_shape, output_size):
                                     padding='valid')
 
     # Dense layers.
-    dense_1 = keras.layers.GCNConv(input_dim=self.input_dim,
-                                            output_dim=FLAGS.hidden1,
-                                            placeholders=self.placeholders,
-                                            act=tf.nn.relu,
-                                            dropout=True,
-                                            sparse_inputs=True,
-                                            logging=self.logging))
-    """dense_1 = keras.layers.Dense(GraphConvolution(input_dim=self.input_dim,
+    dense_1 = keras.layers.GCNConv(act=tf.nn.relu)
+                                            
+                                   """dense_1 = keras.layers.Dense(GraphConvolution(input_dim=self.input_dim,
                                             output_dim=FLAGS.hidden1,
                                             placeholders=self.placeholders,
                                             act=tf.nn.relu,
