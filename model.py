@@ -2,6 +2,9 @@
 import tensorflow as tf
 from tensorflow import keras
 
+from torch.nn import Linear, ReLU
+from torch_geometric.nn import Sequential, GCNConv
+
 
 def build_landmark_model(input_shape, output_size):
     """Build the convolutional network model with Keras Functional API.
@@ -75,7 +78,7 @@ def build_landmark_model(input_shape, output_size):
                                     padding='valid')
 
     # Dense layers.
-    dense_1 = keras.layers.GraphConvolution(units=1024,
+    dense_1 = keras.layers.GCNConv(units=1024,
                                  activation='relu',
                                  use_bias=True)
     """dense_1 = keras.layers.Dense(GraphConvolution(input_dim=self.input_dim,
